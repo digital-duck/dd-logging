@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dd-logging"
+version = "0.1.0"
+description = "Shared logging helpers for Digital Duck projects (spl-llm, spl-flow, …)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["logging", "digital-duck", "spl"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Logging",
+]
+
+[project.urls]
+Homepage    = "https://github.com/digital-duck/dd-logging"
+Repository  = "https://github.com/digital-duck/dd-logging"
+Issues      = "https://github.com/digital-duck/dd-logging/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dd_logging*"]
