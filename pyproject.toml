@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dd-logging"
-version = "0.1.0"
+version = "0.1.1"
 description = "Shared logging helpers for Digital Duck projects (spl-llm, spl-flow, …)"
 readme = "README.md"
 license = "MIT"
