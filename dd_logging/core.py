@@ -44,6 +44,7 @@ def setup_logging(
     log_level: str = "info",
     log_dir: Path | str | None = None,
     console: bool = False,
+    log_ext: str = ".log",
 ) -> Path:
     """Attach a timestamped FileHandler to *root_name* logger.
 
@@ -58,6 +59,7 @@ def setup_logging(
     log_level : ``"debug"`` | ``"info"`` | ``"warning"`` | ``"error"``
     log_dir   : directory for log files; defaults to ``./logs`` relative to CWD
     console   : also attach a StreamHandler (useful in CLI --verbose mode)
+    log_ext   : file extension for the log file, e.g. ``".log"`` (default) or ``".md"``
 
     Returns
     -------
@@ -68,7 +70,8 @@ def setup_logging(
 
     dt_str = datetime.now().strftime("%Y%m%d-%H%M%S")
     suffix = f"-{adapter}" if adapter else ""
-    log_path = target_dir / f"{run_name}{suffix}-{dt_str}.log"
+    ext = log_ext if log_ext.startswith(".") else f".{log_ext}"
+    log_path = target_dir / f"{run_name}{suffix}-{dt_str}{ext}"
 
     level = LOG_LEVELS.get(log_level.lower(), logging.INFO)
 
